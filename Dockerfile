@@ -16,5 +16,6 @@ RUN vim +GoInstallBinaries +qall
 
 RUN go mod init learn-golang
 RUN go build .
+RUN cd hello && go build
 
 CMD ["bash"]
