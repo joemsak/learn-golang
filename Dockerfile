@@ -12,6 +12,7 @@ RUN apt update && apt install -y \
 RUN curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 
 RUN vim +NeoBundleInstall +qall
+RUN vim +GoInstallBinaries +qall
 
 RUN go mod init hello
 RUN go build .
