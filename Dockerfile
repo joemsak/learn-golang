@@ -14,7 +14,7 @@ RUN curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/insta
 RUN vim +NeoBundleInstall +qall
 RUN vim +GoInstallBinaries +qall
 
-RUN go mod init hello
+RUN go mod init learn-golang
 RUN go build .
 
 CMD ["bash"]
