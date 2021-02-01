@@ -5,6 +5,8 @@ RUN apt update && apt install -y \
 
 RUN curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 
+COPY vimrc /root/.vimrc
+
 RUN vim +NeoBundleInstall +qall
 RUN vim +GoInstallBinaries +qall
 
@@ -12,8 +14,7 @@ WORKDIR /go/src/app
 
 COPY . .
 
-RUN mv /go/src/app/vimrc /root/.vimrc
-
+RUN rm vimrc
 RUN go mod init learn-golang
 RUN go build .
 RUN cd hello && go build
